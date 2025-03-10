@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export const ProductDetail = ({ product}) => {
+export const ProductDetail = ({ product }) => {
 
     return (
         <>
@@ -17,4 +17,3 @@ export const ProductDetail = ({ product}) => {
 ProductDetail.propTypes = {
     product: PropTypes.object.isRequired
 };
-

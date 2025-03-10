@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import { listProducts } from "../services/ProductService.js";
 import { ProductGrid } from "./ProductGrid.jsx";
+import { ProductForm } from "./ProductForm.jsx";
 
 export const ProductApp = () => {
 
@@ -13,8 +14,17 @@ export const ProductApp = () => {
 
     return (
         <>
-            <h1>Hello world React</h1>
-            <ProductGrid products={products}/>
+            <div>
+                <h1>Hello world React</h1>
+                <div>
+                    <div>
+                        <ProductGrid products={products} />
+                    </div>
+                    <div>
+                        <ProductForm />
+                    </div>
+                </div>
+            </div>
         </>
     );
 }
