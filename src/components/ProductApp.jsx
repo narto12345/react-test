@@ -12,6 +12,12 @@ export const ProductApp = () => {
 
     const [products, setProducts] = useState([]);
 
+    const updateData = (product) => {
+        let lastId = products[products.length - 1].id;
+        product.id = ++lastId;
+        setProducts([...products, product]);
+    };
+
     return (
         <>
             <div>
@@ -21,7 +27,7 @@ export const ProductApp = () => {
                         <ProductGrid products={products} />
                     </div>
                     <div>
-                        <ProductForm />
+                        <ProductForm updateData={updateData} />
                     </div>
                 </div>
             </div>

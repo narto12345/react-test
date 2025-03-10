@@ -6,7 +6,7 @@ const initialDataForm = {
     age: ""
 };
 
-export const ProductForm = () => {
+export const ProductForm = ({ updateData }) => {
 
     const [productForm, setProductForm] = useState(initialDataForm);
 
@@ -14,7 +14,18 @@ export const ProductForm = () => {
 
     return (
         <>
-            <form action="">
+            <form onSubmit={
+                (event) => {
+                    event.preventDefault();
+
+                    if (!name || !lastname || !age) {
+                        alert("Todos los campos son obligatorios");
+                        return;
+                    }
+                    updateData(productForm);
+                    setProductForm(initialDataForm);
+                }
+            }>
                 <input placeholder="Name"
                     type="text"
                     style={{
