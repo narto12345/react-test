@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export const ProductDetail = ({ product, deleteData }) => {
+export const ProductDetail = ({ product, deleteData, setproductSeleted }) => {
 
     return (
         <>
@@ -10,9 +10,16 @@ export const ProductDetail = ({ product, deleteData }) => {
                 <td>{product.lastname}</td>
                 <td>{product.age}</td>
                 <th>
-                    <button>UPDATE</button>
+                    <button
+                        onClick={
+                            () => {
+                                setproductSeleted(product);
+                            }
+                        }
+                    >
+                    UPDATE</button>
                     <button onClick={() => {
-                        deleteData(product.id)
+                        deleteData(product.id);
                     }}>DELETE</button>
                 </th>
             </tr>

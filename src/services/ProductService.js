@@ -41,3 +41,8 @@ export const deleteProduct = (productId) => {
   const index = products.findIndex((product) => product.id == productId);
   products.splice(index, 1);
 };
+
+export const updateProduct = (product) => {
+  const index = products.findIndex((product) => product.id == product.id);
+  products[index] = product;
+};

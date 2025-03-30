@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const initialDataForm = {
     name: "",
@@ -6,11 +6,16 @@ const initialDataForm = {
     age: ""
 };
 
-export const ProductForm = ({ updateData }) => {
+export const ProductForm = ({ updateData, productSeleted }) => {
 
     const [productForm, setProductForm] = useState(initialDataForm);
 
     const { name, lastname, age } = productForm;
+
+    useEffect(() => {
+        setProductForm(productSeleted)
+    },
+    [productSeleted]);
 
     return (
         <>

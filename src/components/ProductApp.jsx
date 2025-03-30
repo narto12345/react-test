@@ -12,6 +12,15 @@ export const ProductApp = () => {
 
     const [products, setProducts] = useState([]);
 
+    const [productSeleted, setproductSeleted] = useState(
+        {
+            id: "",
+            name: "",
+            lastname: "",
+            age: "",
+        }
+    );
+
     const updateData = (product) => {
         createProduct(product);
         setProducts(listProducts());
@@ -22,16 +31,21 @@ export const ProductApp = () => {
         setProducts(listProducts());
     };
 
+    const selectProduct = (product) => {
+        console.log(product);
+        setproductSeleted({... product});
+    };
+
     return (
         <>
             <div>
                 <h1>Hello world React</h1>
                 <div>
                     <div>
-                        <ProductGrid products={products} deleteData={deleteData} />
+                        <ProductGrid products={products} deleteData={deleteData} setproductSeleted={selectProduct}/>
                     </div>
                     <div>
-                        <ProductForm updateData={updateData} />
+                        <ProductForm updateData={updateData} productSeleted={productSeleted} />
                     </div>
                 </div>
             </div>
