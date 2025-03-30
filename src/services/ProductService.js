@@ -25,4 +25,19 @@ const products = [
   },
 ];
 
-export const listProducts = () => products;
+export const listProducts = () => [...products];
+
+export const createProduct = (product) => {
+  let lastId = 0;
+  
+  if (products.length > 0)
+    lastId = products[products.length - 1].id;
+
+  product.id = ++lastId;
+  products.push(product);
+};
+
+export const deleteProduct = (productId) => {
+  const index = products.findIndex((product) => product.id == productId);
+  products.splice(index, 1);
+};
