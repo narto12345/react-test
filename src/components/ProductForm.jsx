@@ -33,10 +33,7 @@ export const ProductForm = ({ updateData, productSeleted }) => {
             }>
                 <input placeholder="Name"
                     type="text"
-                    style={{
-                        marginBottom: "10px",
-                        display: "block"
-                    }}
+                    className="form-control my-3 w-75"
                     name="name"
                     value={name}
                     onChange={(event) => setProductForm({
@@ -46,10 +43,7 @@ export const ProductForm = ({ updateData, productSeleted }) => {
                 />
                 <input placeholder="Lastname"
                     type="text"
-                    style={{
-                        marginBottom: "10px",
-                        display: "block"
-                    }}
+                    className="form-control my-3 w-75"
                     name="lastname"
                     value={lastname}
                     onChange={(event) => setProductForm({
@@ -59,10 +53,7 @@ export const ProductForm = ({ updateData, productSeleted }) => {
                 />
                 <input placeholder="Age"
                     type="text"
-                    style={{
-                        marginBottom: "10px",
-                        display: "block"
-                    }}
+                    className="form-control my-3 w-75"
                     name="age"
                     value={age}
                     onChange={(event) => setProductForm({
@@ -70,7 +61,7 @@ export const ProductForm = ({ updateData, productSeleted }) => {
                         age: event.target.value
                     })}
                 />
-                <button type="submit">Save</button>
+                <button type="submit" className="btn btn-primary">Save</button>
             </form>
         </>
     );

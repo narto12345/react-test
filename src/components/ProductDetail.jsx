@@ -11,6 +11,7 @@ export const ProductDetail = ({ product, deleteData, setproductSeleted }) => {
                 <td>{product.age}</td>
                 <th>
                     <button
+                        className="btn btn-secondary btn-sm m-1"
                         onClick={
                             () => {
                                 setproductSeleted(product);
@@ -18,7 +19,9 @@ export const ProductDetail = ({ product, deleteData, setproductSeleted }) => {
                         }
                     >
                     UPDATE</button>
-                    <button onClick={() => {
+                    <button
+                        className="btn btn-danger btn-sm m-1"
+                        onClick={() => {
                         deleteData(product.id);
                     }}>DELETE</button>
                 </th>

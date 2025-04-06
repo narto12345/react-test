@@ -38,13 +38,13 @@ export const ProductApp = () => {
 
     return (
         <>
-            <div>
-                <h1>CRUD</h1>
-                <div>
-                    <div>
+            <div className="container my-4">
+                <h2>CRUD</h2>
+                <div className="row">
+                    <div className="col">
                         <ProductGrid products={products} deleteData={deleteData} setproductSeleted={selectProduct}/>
                     </div>
-                    <div>
+                    <div className="col">
                         <ProductForm updateData={updateData} productSeleted={productSeleted} />
                     </div>
                 </div>

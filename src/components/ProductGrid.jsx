@@ -5,7 +5,7 @@ export const ProductGrid = ({ products, deleteData, setproductSeleted }) => {
 
     return (
         <>
-            <table>
+            <table className="table table-hover table-striped">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -17,14 +17,19 @@ export const ProductGrid = ({ products, deleteData, setproductSeleted }) => {
                 </thead>
                 <tbody>
                     {
-                        products.map((product) => (
-                            <ProductDetail
-                                product={product}
-                                key={product.id}
-                                deleteData={deleteData}
-                                setproductSeleted={setproductSeleted}
-                            />
-                        ))
+                        products.length != 0 ? (
+                            products.map((product) => (
+                                <ProductDetail
+                                    product={product}
+                                    key={product.id}
+                                    deleteData={deleteData}
+                                    setproductSeleted={setproductSeleted}
+                                />
+                            ))
+                        ) : (
+                            <div>No hay registros</div>
+                        )
+                        
                     }
                 </tbody>
             </table>
