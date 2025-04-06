@@ -28,6 +28,12 @@ const products = [
 export const listProducts = () => [...products];
 
 export const createProduct = (product) => {
+
+  if (product.id) {
+    updateProduct(product);
+    return;
+  }
+
   let lastId = 0;
   
   if (products.length > 0)
@@ -42,7 +48,12 @@ export const deleteProduct = (productId) => {
   products.splice(index, 1);
 };
 
-export const updateProduct = (product) => {
-  const index = products.findIndex((product) => product.id == product.id);
-  products[index] = product;
+export const updateProduct = (updatedProduct) => {
+
+  console.log(`Update function: id: ${updatedProduct.id}`);
+
+  const index = products.findIndex((product) => product.id == updatedProduct.id);
+
+  console.log(`Index: ${index}`);
+  products[index] = updatedProduct;
 };

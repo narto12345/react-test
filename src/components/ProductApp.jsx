@@ -39,7 +39,7 @@ export const ProductApp = () => {
     return (
         <>
             <div>
-                <h1>Hello world React</h1>
+                <h1>CRUD</h1>
                 <div>
                     <div>
                         <ProductGrid products={products} deleteData={deleteData} setproductSeleted={selectProduct}/>

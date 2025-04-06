@@ -70,7 +70,7 @@ export const ProductForm = ({ updateData, productSeleted }) => {
                         age: event.target.value
                     })}
                 />
-                <button type="submit">Create</button>
+                <button type="submit">Save</button>
             </form>
         </>
     );
